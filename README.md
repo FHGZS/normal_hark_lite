@@ -6,7 +6,7 @@
 通用的POC检测框架，有足够的POC，就可以找出相应的漏洞。
 a farmework to test poc,based on search engine can get the valid infomation to test the vulnerability
 
-##plugins
+##plugins文件夹说明
 * 存放POC的位置
 * 命名规则：component文件夹作为分类，针对具体的漏洞要独立建立一个文件夹，并在里面添加POC，里面已经有参考的模板了，使用的时候要继承T这个类，并实现相关函数
 
