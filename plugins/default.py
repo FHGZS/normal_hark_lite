@@ -106,7 +106,8 @@ class PocController(object):
 
 
             if result['result']:
-                haveresult=callbackresult.storeresult(result=result)
+                haveresult=callbackresult.storedata(ip=ip,port=port,hackinfo=result)
+                print '发现漏洞'
                 break;
 
 
@@ -119,11 +120,7 @@ class PocController(object):
 #         for module_name in self.components.keys():
 #             othermodule.extend(self.components[module_name].keys())
 
-
-
-
-
-        kw=keywords
+        kw=keywords#关键词
 
         for module_name, module_info in self.keywords.items():
 
@@ -133,7 +130,9 @@ class PocController(object):
                 matched_modules.append([module_name,comonentname])
                 continue
             for keyword in keywords:
-                if keyword in kw:
+                if keyword in kw or keyword in productname.lower()  or keyword in head.lower()   :
+                    
+                    
 #                     self.logger and self.logger.info('Match Keyword: %s -> %s', resp.url, keyword)
                     matched_modules.append([module_name,comonentname])
                     break

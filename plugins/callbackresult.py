@@ -5,40 +5,15 @@
 
 import time
 # islocalwork=config.Config.islocalwork
-def storedata(ip='',port='',hackinfo=''):
-#     sqlTool=Sqldatatask.getObject()
-#     localtime=str(time.strftime("%Y-%m-%d %X", time.localtime()))
-#     insertdata=[]
-#     if islocalwork==0:
-#         work=[]
-#         dic={"table":config.Config.iptable,"select_params": ['ip','vendor','osfamily','osgen','accurate','updatetime','hostname','state'],"insert_values": [(temphosts,tempvendor,temposfamily,temposgen,tempaccuracy,localtime,temphostname,tempstate)]}
-#         tempdata={"func":'replaceinserttableinfo_byparams',"dic":dic}
-#         jsondata=uploaditem.UploadData(url=self.webconfig.upload_ip_info,way='POST',params=tempdata)
-#         work.append(jsondata)
-#         self.uploadwork.add_work(work)
-                    
-#     else:
-
-#     hackinfo=SQLTool.escapewordby(hackinfo)
-#     extra=' on duplicate key update  hackinfo=\''+hackinfo+'\' , timesearch=\''+localtime+'\''
-#             
-#     insertdata.append((str(ip),port,hackinfo,str(port)))
-# 
-# 
-#     sqldatawprk=[]
-#     dic={"table":config.Config.porttable,"select_params":['ip','port','hackinfo','portnumber'],"insert_values":insertdata,"extra":extra}
-#                
-#     tempwprk=Sqldata.SqlData('inserttableinfo_byparams',dic)
-#     sqldatawprk.append(tempwprk)
-#     sqlTool.add_work(sqldatawprk)   
-    pass
-def storeresult(result=None):
+def storedata(ip='',port='',hackinfo=None):
     print '----------------------------------------'
     print '发现漏洞'
-    print '位置:'+result['VerifyInfo']['URL']
-    print '类型:'+result['VerifyInfo']['type']
-    print 'payload:'+result['VerifyInfo']['payload']
+    print '位置:'+hackinfo['VerifyInfo']['URL']
+    print '类型:'+hackinfo['VerifyInfo']['type']
+    print 'payload:'+hackinfo['VerifyInfo']['payload']
     
-    return True
+    return True	
+
+
     
     
